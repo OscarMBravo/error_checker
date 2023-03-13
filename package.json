@@ -1,0 +1,27 @@
+{
+  "name": "error-functions-plus-index",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OscarMBravo/error-functions-plus-index.git"
+  },
+  "author": "oscar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OscarMBravo/error-functions-plus-index/issues"
+  },
+  "homepage": "https://github.com/OscarMBravo/error-functions-plus-index#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.13.0"
+  }
+}

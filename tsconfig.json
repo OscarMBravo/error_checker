@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "sourceMap": false,
+    "outDir": "dist",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true
+  },
+  "include": ["src", "src/**/*.json"]
+}
