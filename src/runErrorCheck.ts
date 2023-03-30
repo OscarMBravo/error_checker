@@ -4,28 +4,33 @@ import {
   fadaChecker,
   typoChecker,
   broadSlenderChecker,
-  stringifyConjugation
+  stringifyConjugation,
 } from "./errorCheckers/index.js";
-
-
 
 const runErrorCheck = (word: string, target: string) => {
   // This is where the four error functions are used and output is decided
   const conjugationOutput = conjugationChecker(word, target);
-  const stringifyConjugationOutput = stringifyConjugation(conjugationChecker(word, target));
-  // const stringConjugationOutput = stringifyConjugationOutput(conjugationOutput);
+  let stringConjugationOutput = "null";
+  if (Array.isArray(conjugationOutput)) {
+    stringConjugationOutput = stringifyConjugation(
+      conjugationOutput[0],
+      conjugationOutput[1]
+    );
+  }
   const fadaOutput = fadaChecker(word, target);
   const typoOutput = typoChecker(word, target);
-  const broadSlenderOutput  = broadSlenderChecker(word, target);
-  return {
+  const broadSlenderOutput = broadSlenderChecker(word, target);
+  const data = {
     word: word,
     target: target,
     conjugationOutput: conjugationOutput,
     fadaOutput: fadaOutput,
     typoOutput: typoOutput,
     broadSlenderOutput: broadSlenderOutput,
-    stringifyConjugationOutput: stringifyConjugationOutput
+    stringConjugationOutput: stringConjugationOutput,
   };
+  console.log("data:", data);
+  return data;
 };
 
 export default runErrorCheck;
