@@ -11,12 +11,13 @@ const runErrorCheck = (word: string, target: string) => {
   // This is where the four error functions are used and output is decided
   const conjugationOutput = conjugationChecker(word, target);
   let stringConjugationOutput = "null";
-  if (Array.isArray(conjugationOutput)) {
+  if (conjugationOutput != null) {
     stringConjugationOutput = stringifyConjugation(
-      conjugationOutput[0],
-      conjugationOutput[1]
+      conjugationOutput.word,
+      conjugationOutput.target
     );
   }
+  
   const fadaOutput = fadaChecker(word, target);
   const typoOutput = typoChecker(word, target);
   const broadSlenderOutput = broadSlenderChecker(word, target);
