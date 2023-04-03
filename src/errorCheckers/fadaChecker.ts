@@ -4,8 +4,22 @@ const fadaChecker = (word: string, target: string) => {
   const CONSONANTS = ["b", "c", "d", "f", "g", "l", "m", "n", "p", "r", "s", "t"];
   var consonantsInRightPlace: boolean = true;
 
-  // make it so the program only runs as long as the length of the shorter word
+
  
+  let firstWordNi = target.charAt(0) + target.charAt(1);
+  let firstWordNior = target.charAt(0) + target.charAt(1) + target.charAt(2) + target.charAt(3);
+  
+  if(firstWordNi == 'ní' || firstWordNi == 'Ní'){
+     target = target.slice(3);
+     word = word.slice(3);
+  }
+  else if (firstWordNior == 'níor' || firstWordNior == 'Níor'){
+    target = target.slice(5);
+    word = word.slice(5);
+  }
+  
+  // make it so the program only runs as long as the length of the shorter word
+
   let shorterWordLength = target.length;
 
   if (word.length < target.length) {
