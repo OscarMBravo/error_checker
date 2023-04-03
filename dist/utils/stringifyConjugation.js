@@ -6,15 +6,22 @@ const stringifyConjugation = (word, target) => {
     const targetVerb = target[0];
     const wordTense = word[1];
     const targetTense = target[1];
-    const wordPerson = word[2];
-    const targetPerson = word[2];
-    if (wordVerb != targetVerb && wordTense == targetTense && wordPerson == targetPerson) {
+    const wordForm = word[2];
+    const targetForm = target[2];
+    console.log("\n\finding errors\n\n\n:");
+    console.log(wordForm, targetForm);
+    console.log(wordVerb, targetVerb);
+    console.log(wordTense, targetTense);
+    if (wordVerb != targetVerb && wordTense == targetTense && wordForm == targetForm) {
         return "incorrectVerb";
     }
-    else if (wordTense != targetTense && wordVerb == targetVerb && wordPerson == targetPerson) {
+    else if (wordTense != targetTense && wordVerb == targetVerb && wordForm == targetForm) {
         return "incorrectTense";
     }
-    else if (wordPerson != targetPerson && wordVerb == targetVerb && wordTense == targetTense) {
+    else if (wordForm != targetForm && wordVerb == targetVerb && wordTense == targetTense) {
+        return "incorrectForm";
+    }
+    else if (wordVerb == targetVerb && wordTense == targetTense && wordForm == targetForm) {
         return "incorrectPerson";
     }
     else

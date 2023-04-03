@@ -58,6 +58,12 @@ const broadSlenderChecker = (word, target) => {
                 isAfterConsonants = true;
             }
         }
+        // Check if it's a blank space
+        if (currentLetter == ' ') {
+            onBroad = false;
+            onSlender = false;
+            isAfterConsonants = false;
+        }
     }
     // If no issues arise, it follows the rule
     return "no issues here";
