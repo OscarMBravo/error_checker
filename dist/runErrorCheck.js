@@ -1,7 +1,7 @@
 // import { caolLeathanChecker } from "./caolLeathanChecker";
-import { conjugationChecker, fadaChecker, typoChecker, broadSlenderChecker, stringifyConjugation, } from "./errorCheckers/index.js";
+import { conjugationChecker, fadaChecker, typoChecker, broadSlenderChecker, stringifyConjugation, precedingWordChecker, } from "./errorCheckers/index.js";
 const runErrorCheck = (word, target) => {
-    // This is where the four error functions are used and output is decided
+    // This is where the five error functions are used and output is decided
     const conjugationOutput = conjugationChecker(word, target);
     let stringConjugationOutput = "null";
     if (conjugationOutput != null) {
@@ -10,6 +10,7 @@ const runErrorCheck = (word, target) => {
     const fadaOutput = fadaChecker(word, target);
     const typoOutput = typoChecker(word, target);
     const broadSlenderOutput = broadSlenderChecker(word, target);
+    const precedingWordOutput = precedingWordChecker(word, target);
     const data = {
         word: word,
         target: target,
@@ -17,6 +18,7 @@ const runErrorCheck = (word, target) => {
         fadaOutput: fadaOutput,
         typoOutput: typoOutput,
         broadSlenderOutput: broadSlenderOutput,
+        precedingWordOutput: precedingWordOutput,
         stringConjugationOutput: stringConjugationOutput,
     };
     console.log("data:", data);
