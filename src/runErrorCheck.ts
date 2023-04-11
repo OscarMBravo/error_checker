@@ -8,8 +8,15 @@ import {
   precedingWordChecker,
 } from "./errorCheckers/index.js";
 
-const runErrorCheck = (word: string, target: string) => {
+const runErrorCheck = (
+  word: string,
+  target: string,
+  hints: string[] | undefined
+) => {
   // This is where the five error functions are used and output is decided
+
+  console.log("hints:", hints);
+
   const conjugationOutput = conjugationChecker(word, target);
   let stringConjugationOutput = "null";
   if (conjugationOutput != null) {
@@ -18,12 +25,12 @@ const runErrorCheck = (word: string, target: string) => {
       conjugationOutput.target
     );
   }
-  
+
   const fadaOutput = fadaChecker(word, target);
   const typoOutput = typoChecker(word, target);
   const broadSlenderOutput = broadSlenderChecker(word, target);
   const precedingWordOutput = precedingWordChecker(word, target);
-  
+
   const data = {
     word: word,
     target: target,

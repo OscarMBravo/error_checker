@@ -1,7 +1,8 @@
 // import { caolLeathanChecker } from "./caolLeathanChecker";
 import { conjugationChecker, fadaChecker, typoChecker, broadSlenderChecker, stringifyConjugation, precedingWordChecker, } from "./errorCheckers/index.js";
-const runErrorCheck = (word, target) => {
+const runErrorCheck = (word, target, hints) => {
     // This is where the five error functions are used and output is decided
+    console.log("hints:", hints);
     const conjugationOutput = conjugationChecker(word, target);
     let stringConjugationOutput = "null";
     if (conjugationOutput != null) {
