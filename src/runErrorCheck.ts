@@ -18,8 +18,10 @@ const runErrorCheck = (
   console.log("hints:", hints);
 
   const conjugationOutput = conjugationChecker(word, target);
+  console.log("conjugationOutput:", conjugationOutput);
+
   let stringConjugationOutput = "null";
-  if (conjugationOutput != null) {
+  if (conjugationOutput !== null) {
     stringConjugationOutput = stringifyConjugation(
       conjugationOutput.word,
       conjugationOutput.target

@@ -12,16 +12,18 @@ const stringifyConjugation = (word, target) => {
     console.log(wordForm, targetForm);
     console.log(wordVerb, targetVerb);
     console.log(wordTense, targetTense);
-    if (wordVerb != targetVerb && wordTense == targetTense && wordForm == targetForm) {
+    if (wordVerb !== targetVerb) {
         return "incorrectVerb";
     }
-    else if (wordTense != targetTense && wordVerb == targetVerb && wordForm == targetForm) {
+    else if (wordTense !== targetTense) {
         return "incorrectTense";
     }
-    else if (wordForm != targetForm && wordVerb == targetVerb && wordTense == targetTense) {
+    else if (wordForm !== targetForm) {
         return "incorrectForm";
     }
-    else if (wordVerb == targetVerb && wordTense == targetTense && wordForm == targetForm) {
+    else if (wordVerb === targetVerb &&
+        wordTense === targetTense &&
+        wordForm === targetForm) {
         return "incorrectPerson";
     }
     else
