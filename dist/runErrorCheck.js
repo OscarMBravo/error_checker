@@ -1,5 +1,5 @@
 // import { caolLeathanChecker } from "./caolLeathanChecker";
-import { conjugationChecker, fadaChecker, typoChecker, broadSlenderChecker, stringifyConjugation, precedingWordChecker, } from "./errorCheckers/index.js";
+import { conjugationChecker, fadaChecker, typoChecker, broadSlenderChecker, stringifyConjugation, precedingWordChecker, uruSeimhiuChecker, } from "./errorCheckers/index.js";
 const runErrorCheck = (word, target, hints) => {
     // This is where the five error functions are used and output is decided
     console.log("hints:", hints);
@@ -13,6 +13,7 @@ const runErrorCheck = (word, target, hints) => {
     const typoOutput = typoChecker(word, target);
     const broadSlenderOutput = broadSlenderChecker(word, target);
     const precedingWordOutput = precedingWordChecker(word, target);
+    const uruSeimhiuOutput = uruSeimhiuChecker(word, target);
     const data = {
         word: word,
         target: target,
@@ -21,6 +22,7 @@ const runErrorCheck = (word, target, hints) => {
         typoOutput: typoOutput,
         broadSlenderOutput: broadSlenderOutput,
         precedingWordOutput: precedingWordOutput,
+        uruSeimhiuOutput: uruSeimhiuOutput,
         stringConjugationOutput: stringConjugationOutput,
     };
     console.log("data:", data);

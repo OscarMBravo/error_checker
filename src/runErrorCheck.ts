@@ -6,6 +6,7 @@ import {
   broadSlenderChecker,
   stringifyConjugation,
   precedingWordChecker,
+  uruSeimhiuChecker,
 } from "./errorCheckers/index.js";
 
 const runErrorCheck = (
@@ -32,6 +33,7 @@ const runErrorCheck = (
   const typoOutput = typoChecker(word, target);
   const broadSlenderOutput = broadSlenderChecker(word, target);
   const precedingWordOutput = precedingWordChecker(word, target);
+  const uruSeimhiuOutput = uruSeimhiuChecker(word, target);
 
   const data = {
     word: word,
@@ -41,6 +43,7 @@ const runErrorCheck = (
     typoOutput: typoOutput,
     broadSlenderOutput: broadSlenderOutput,
     precedingWordOutput: precedingWordOutput,
+    uruSeimhiuOutput: uruSeimhiuOutput,
     stringConjugationOutput: stringConjugationOutput,
   };
   console.log("data:", data);
