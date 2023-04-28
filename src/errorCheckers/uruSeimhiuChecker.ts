@@ -1,7 +1,7 @@
 const uruSeimhiuChecker = (word: string, target: string) => {
 
     const uruCompatibleLetters = ["b", "c", "d", "g", "p", "t"];
-    const urus = ["mb", "gc", "nd", "ng", "bp", "dt"];
+    const urus = ["mb", "gc", "nd", "ng", "bp", "dt", "n-"];
     let wordIncludesUru = false;
     let targetIncludesUru = false;
 
@@ -90,6 +90,14 @@ const uruSeimhiuChecker = (word: string, target: string) => {
             }
         }
     }
+
+    // check d'
+
+    if (target.slice(0, 2).toLowerCase() == "d'" && word.slice(0, 2).toLowerCase() != "d'"){
+        return "missingDApostrophe"
+    }
+
+
 
     return "no errors"
 }
